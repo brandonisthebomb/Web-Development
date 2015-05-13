@@ -1,0 +1,100 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Form Intro</title>
+        
+		<script type='text/javascript'>
+            var masterList = ['Rap', 'Alternative', 'Pop', 'RB'];
+			var rap = ['Kendrick Lamar', 'Drake', 'Kanye West', 'Jay-Z', 'Logic', 'Gambino'];
+			var alternative = ['Ed Sheeran', 'One Republic', 'Coldplay', 'Imagine Dragons'];
+            var pop = ['TSWIFT', 'Lady Gaga', 'Ariana Grande', 'Justin Beiber'];
+			var rb = ['the Weeknd', 'Frank Ocean', 'Mary J. Blige', 'R. Kelly'];
+
+			var currentList = 'nothing';
+        
+            function makeDropdown(){
+				document.getElementById('mList').size = 1;
+			}
+			function makeListbox(){
+				document.getElementById('mList').size = 4;
+			}
+
+            
+			function switch(list){
+				for(x = 0; x<document.getElementById('firstList').size; x++)
+				{
+					document.getElementById('firstList').remove(0);
+				}
+                
+				if(list=='nothing')
+				{
+					var option = document.createElement("option");
+					option.text = 'Nothing Selected';
+					document.getElementById('firstList').add(option);
+					document.getElementById('firstList').size = 1;
+				}
+				if(list=='rap')
+				{
+					for(x = 0; x<rap.length; x++)
+					{
+						var option = document.createElement("option");
+						option.text = rap[x];
+						document.getElementById('firstList').add(option);
+					}
+					document.getElementById('firstList').size = rap.length;
+				}
+				if(list=='alternative')
+				{
+					for(x = 0; x<alternative.length; x++)
+					{
+						var option = document.createElement("option");
+						option.text = alternative[x];
+						document.getElementById('firstList').add(option);
+					}
+					document.getElementById('firstList').size = alternative.length;
+				}
+                if(list=='rb')
+				{
+					for(x = 0; x<rb.length; x++)
+					{
+						var option = document.createElement("option");
+						option.text = rb[x];
+						document.getElementById('firstList').add(option);
+					}
+					document.getElementById('firstList').size = rb.length;
+				}
+
+                if(list=='pop')
+				{
+					for(x = 0; x<pop.length; x++)
+					{
+						var option = document.createElement("option");
+						option.text = pop[x];
+						document.getElementById('firstList').add(option);
+					}
+					document.getElementById('firstList').size = pop.length;
+				}
+
+                
+			}
+            
+
+		</script>
+	</head>
+	<body>
+		<input type=radio id='radOne' name=radioOne value=dropdownRadio onclick='makeDropdown()'>Dropdown<br>
+		<input type=radio id='radTwo' name=radioOne value=listboxRadio onclick='makeListbox()'>Listbox<br>
+ 		<select id='mList' size=1 onChange='switch(this.value)'>
+ 			<option value = 'nothing'>Nothing Selected</option>
+			<option value = 'rap'>Rap</option>
+			<option value = 'alternative'>Alternative</option>
+            <option value = 'pop'>Pop</option>
+			<option value = 'rb'>RB</option>
+
+		</select>
+		<p></p>
+		<select id='firstList' size = 1>
+			<option value = 'nullElement'>Nothing selected</option>
+		</select>
+	</body>
+</html>

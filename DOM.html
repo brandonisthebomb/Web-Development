@@ -1,0 +1,92 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <style type="text/css">
+        div,p {
+            border: 1px solid;
+            border-color: rgb(256,0,0);
+            transition-duration: 0.5s;
+        }
+        .foo {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgb(50,50,50);
+        }
+        </style>
+		<script type='text/javascript'>
+            
+            //function captureClick() {
+            //    e = window.event;
+            //    console.log(e.target);
+            //    }
+
+            
+            function getNext(element){
+                console.log("Next node is: ");
+                current = element.target;
+                var nextThing = null;
+                
+                if(current.firstElementChild) {
+                    nextThing = current.firstElementChild;
+                }
+                
+                else if(current.nextElementSibling) {
+                    nextThing = current.nextElementSibling;
+                }
+                
+                else
+                {
+                    while(!current.parentNode.nextElementSibling) {
+                        current = current.parentNode;
+                    }
+                    if(current.parentNode.nextElementSibling.tagName == 'SCRIPT')
+                    {
+                        current = current.parentNode.nextElementSibling;
+                        while(current.parentNode.tagName != 'BODY') {
+                            current = current.parentNode;
+                        }
+                        nextThing = current.parentNode.firstElementChild;
+                    }
+                    else 
+                    {
+                        nextThing = current.parentNode.nextElementSibling;
+                    }
+                }
+                console.log(nextThing);
+            }
+            window.onclick = getNext;
+        </script>
+        
+	</head>
+	<body>
+
+    <div class="foo">
+
+        <div id="one" style="width: 100px; float:left; height:100px; background:magenta; margin:20px"><p> 1</p></div>
+        <div style="width: 100px; float:left; height:100px; background:magenta; margin:20px">
+            <p>2</p>
+            <p>2</p>
+        </div>
+        <div style="width: 100px; float:left; height:100px; background:magenta; margin:20px"><p>Div 3</p></div>
+        <div style="width: 200px; float:right; height:100px; background:magenta; margin:20px"><p>Div 4</p></div>
+
+        <div style="width: 200px; clear:both; float:left; height:100px; background:magenta; margin:20px"><p>Hellow</p></div>
+
+
+        
+        <div style="width: 100px; clear:both; float:left; height:100px; background:magenta; margin:20px"><p>Start</p></div>
+        <div style="width: 100px; float:right; height:100px; background:magenta; margin:20px"><p>Div 5</p></div>
+        <div style="width: 100px; float:right; height:100px; background:magenta; margin:20px"><p>Div 6</p></div>
+        
+        <div style="width: 400px; float:right; margin:20px">
+         <div style="float:right; background-color:green; width:100px; height:100px; margin-top:100px; margin-right: 1px;">one</div>
+         <div style="float:left; background-color:green; width:100px; height:100px; margin-top:100px; margin-left: 50px;">two</div>
+        </div>
+    
+    </div>
+    </body>
+</html>
