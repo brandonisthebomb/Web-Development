@@ -1,8 +1,6 @@
 <?php
 
-	echo 'hi';
-
-	echo $_POST['input'];
-	echo $_REQUEST['input'];
+	$string = $_POST['input'];
+	echo $string;
 
 ?>
