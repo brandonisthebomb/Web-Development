@@ -14,7 +14,7 @@
 
     .dropdown{
         padding: 0px;
-        background-color: red;
+        
     }
 
     .carousel-inner > .item > img, .carousel-inner > .item > a > img {
@@ -24,8 +24,9 @@
 
     .img{
 
-        width: auto !important;
-        height: 600px !important;
+        width: 100% !important;
+        height: auto !important;
 
     }
+
     
