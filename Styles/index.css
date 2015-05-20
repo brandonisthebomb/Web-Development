@@ -1,4 +1,4 @@
-    @import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
 
     body {
         background-color: white;
@@ -22,11 +22,16 @@
         margin: auto;
     }
 
+    .carousel-inner{
+        overflow: hidden;
+        width: 100%;
+        max-height: 800px;
+    }
+
     .img{
 
         width: 100% !important;
         height: auto !important;
-
     }
 
     
