@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Page Views</title>
+    <title>SQL Page Views</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Styles/index.css">
@@ -17,11 +17,10 @@
 
 <body>
 
-    <h1 class="title-default">Page Views</h1>
+    <h1 class="title-default">SQL Page Views</h1>
 </body>
 
-<?php include ('test.php');?>
 
-<?php include ('tracking.php'); doit();?>
+<?php include ('tracking3.php');?>
 
 </html>

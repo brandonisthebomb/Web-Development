@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>PDF Latex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Styles/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <style>
+
+    form{
+        margin: 0 auto;
+        width: 250px;
+    }
+
+    </style>
+</head>
+    <body>
+        <h1 class="title-default">PDF Latex</h1>
+
+        <?php 
+            $string = $_GET["Username"];
+            echo("Input = ".$string."<br>");
+            $key = md5($string);
+            echo("Key = ".$key);
+            shell_exec('pdflatex example.tex');
+        ?>
+        <form action = "downloader.php" method ="get">
+            <input type="hidden" name="key" id="key" value="<?php echo($key); ?>">
+            <input type='submit' value='Press to download'> </input>
+        </form>
+
+    </body>
+</html>
